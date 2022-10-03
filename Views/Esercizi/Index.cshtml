@@ -3,6 +3,16 @@
     string name = "Fabio";
     string lastName = "Moro";
 
+    List<int> Lista = new List<int>();
+
+    int randomNumber;
+
+    for(int i =0; i < 20; i++) {
+        randomNumber = new Random().Next(90);
+        Lista.Add(randomNumber);
+    }
+
+
     int SommaNumeri(int n) {
 
         int somma = 0;
@@ -33,7 +43,13 @@
 
  <h2>Esercizio 1: @name @lastName</h2>
  <h2>Esercizio 2:</h2> <span>@SommaNumeri(10)</span>
-<h2>Esercizio 1: @ContaLettera()</h2>
+ <h2>Esercizio 3: @ContaLettera()</h2>
+ <h2>Esercizio 4: </h2>
+ @foreach(int numero in Lista) {
+     @if(numero >= 20 & numero < 70) {
+         <span>@numero</span>
+     }
+ }
  
 
 
