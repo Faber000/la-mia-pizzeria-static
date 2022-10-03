@@ -1,0 +1,41 @@
+﻿
+@{
+    string name = "Fabio";
+    string lastName = "Moro";
+
+    int SommaNumeri(int n) {
+
+        int somma = 0;
+
+        for(int i = 1; i <= n; i++) {
+            somma = somma + i;
+        }
+
+        return somma;
+    }
+
+    int ContaLettera() {
+
+        int cont = 0;
+
+        string sentence = "nel mezzo del cammin di nostra vita";
+
+        for(int i = 0; i < sentence.Length; i++) {
+            if(sentence[i].CompareTo('a') == 0) {
+                cont = cont + 1;
+            }
+        }
+
+        return cont;
+    }
+
+}
+
+ <h2>Esercizio 1: @name @lastName</h2>
+ <h2>Esercizio 2:</h2> <span>@SommaNumeri(10)</span>
+<h2>Esercizio 1: @ContaLettera()</h2>
+ 
+
+
+
+
