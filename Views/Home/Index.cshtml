@@ -1,28 +1,24 @@
 ﻿@{
     Layout = null;
-    var names = new string[] { "Margherita", "Napoli", "Diavola" };
-    var descriptions = new string[] { "Mozzarella e Pomodoro", "Mozzarella, Pomodoro e Alici", "Salame piccante" };
-    var images = new string[] { "https://www.tavolartegusto.it/wp/wp-content/uploads/2020/05/Pizza-napoletana-Ricetta-della-Pizza-Napoletana-Pizza-Margherita.jpg", "https://www.donnamoderna.com/content/uploads/2021/08/pizza-napoli.jpg", "https://www.misya.info/wp-content/uploads/2007/08/Pizza-alla-diavola.jpg" };
-    var prices = new double[] { 4.99, 5.99, 6.99 };
+    List<Pizza> ListaPizze = new List<Pizza>();
+    Pizza margherita = new Pizza("Margerita", "Mozzarella e Pomodoro", "https://www.tavolartegusto.it/wp/wp-content/uploads/2020/05/Pizza-napoletana-Ricetta-della-Pizza-Napoletana-Pizza-Margherita.jpg", 5.99);
+    Pizza napoli = new Pizza("Napoli", "Mozzarella, Pomodoro e Alici", "https://www.donnamoderna.com/content/uploads/2021/08/pizza-napoli.jpg", 6.99);
+    Pizza diavola = new Pizza("Diavola", "Salame piccante", "https://www.misya.info/wp-content/uploads/2007/08/Pizza-alla-diavola.jpg", 7.99);
+    ListaPizze.Add(margherita);
+    ListaPizze.Add(napoli);
+    ListaPizze.Add(diavola);
 }
 
-<div class="margherita">
-    <div>@names[0]</div>
-    <div>@descriptions[0]</div>
-    <image src="@images[0]" style="width: 200px;"></image>
-    <div>@prices[0]</div>
-</div>
+@foreach(Pizza pizza in ListaPizze) {
+    <div>
+        <div>@pizza.Nome</div>
+        <div>@pizza.Descrizione</div>
+        <image src="@pizza.Immagine" style="width: 200px"></image>
+        <div>@pizza.Prezzo</div>
+    </div>
+}
 
-<div class="napoli">
-    <div>@names[1]</div>
-    <div>@descriptions[1]</div>
-    <image src="@images[1]" style="width: 200px;"></image>
-    <div>@prices[1]</div>
-</div>
 
-<div class="diavola">
-    <div>@names[2]</div>
-    <div>@descriptions[2]</div>
-    <image src="@images[2]" style="width: 200px;"></image>
-    <div>@prices[2]</div>
-</div>
+    
+
+
